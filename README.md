@@ -1,6 +1,6 @@
 ### Hi there 👋
 
-[![lemy0715 GitHub stats](https://github-readme-stats.vercel.app/api?username=MuYoul&show_icons=true&count_private=true)](https://github.com/anuraghazra/github-readme-stats)
+[![lemy0715 GitHub stats](https://github-readme-stats.vercel.app/api?username=MuYoul&show_icons=true&count_private=true&include_orgs=true)](https://github.com/anuraghazra/github-readme-stats)
 
 [![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=MuYoul&langs_count=10&layout=compact)](https://github.com/anuraghazra/github-readme-stats)
 <!--
