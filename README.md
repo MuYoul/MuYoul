@@ -25,6 +25,34 @@
 | **ThreadScope** | Threads 글마다 조회·반응 지표를 계산해 보여 주는 크롬 확장(MV3), 서버 없이 브라우저 안에서 동작 | 사용자 `____` <!-- TODO --> | JavaScript, Chrome Extension MV3 |
 | **슬기로운 AI 공방** | 멤버 실습·발표·출석·운영 현황 관리 플랫폼 (멤버 웹·운영진 웹·API·인프라) | 멤버 `____` <!-- TODO --> | Next.js, FastAPI, SQLAlchemy, Terraform, GitHub Actions |
 
+## Gridmint — 암호화폐 자동매매 플랫폼
+
+모두 기획·개발·운영 1인. 실제 계정으로 매일 돌리고 있는 서비스예요. 스크린샷의 금액·수량은 모두 가렸습니다(`•••••`).
+
+| 서비스 | 하는 일 | 스택 |
+|---|---|---|
+| **Gridmint Bots** | 그리드봇·시그널봇·스캘퍼를 한 콘솔에서 만들고 멈추고 관리. 거래소 잔고를 포지션 단위로 나눠 어느 봇이 맡는지 추적 | Python, FastAPI, PostgreSQL, React/TypeScript |
+| **Gridmint Ledger** | 여러 거래소 자산·수익·거래 내역을 한곳에 모아 KRW·USDT를 섞지 않고 보여 주는 자산 앱 | Next.js, React, Python, FastAPI |
+| **Candle Collector · MCP** | Binance·Bitget·OKX 캔들을 모으고 MCP 서버로 AI 클라이언트에 제공 | Python, MCP |
+
+- 연동 거래소: Upbit · Coinone · Bitget · OKX (Bybit·Binance 준비 중)
+- 배포: GitHub Actions에서 커밋(SHA) 고정 릴리스·롤백, Cloudflare Tunnel, AWS Lightsail, Prometheus/Grafana 관측
+
+<table>
+  <tr>
+    <td width="50%"><img src="assets/gridmint/grid-bots.jpg" alt="그리드봇 목록"><br><sub>그리드봇 — 봇별 상태·예산·손익·미청산 한도</sub></td>
+    <td width="50%"><img src="assets/gridmint/flow.jpg" alt="포지션·봇 흐름도"><br><sub>흐름도 — 거래소 잔고 → 포지션 → 담당 봇 소유권</sub></td>
+  </tr>
+  <tr>
+    <td><img src="assets/gridmint/position-manager.jpg" alt="포지션 관리자"><br><sub>포지션 관리자 — 거래소별 보유 자산을 봇에 편입·보호</sub></td>
+    <td><img src="assets/gridmint/scalper.jpg" alt="스캘퍼 콘솔"><br><sub>스캘퍼 — 선물 포지션 수동 진입·청산 콘솔</sub></td>
+  </tr>
+  <tr>
+    <td><img src="assets/gridmint/ledger-assets.jpg" alt="Gridmint Ledger 자산"><br><sub>Gridmint Ledger — 거래소 통합 자산</sub></td>
+    <td></td>
+  </tr>
+</table>
+
 ## 앱인토스 게임 — 카드를 누르면 바로 플레이
 
 모두 기획·개발·배포 1인. 공통 셸 `appintoss-kit`으로 토스·웹·앱(Capacitor) 빌드를 한 코드로 처리합니다.
