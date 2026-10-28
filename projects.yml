@@ -21,7 +21,6 @@ projects:
       - OpenAPI에서 MCP 도구를 자동 생성해 API 전체를 AI에 제공
       - 메모·이미지·Drive·RAG API, Slack 등 대화 환경에서 사용
     stack: [Python, FastAPI, React, OAuth, MCP]
-    link: https://simsim.mycsbot.com/
     updated: 2026-07
 
   - name: AiMER
