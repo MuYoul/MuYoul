@@ -23,6 +23,11 @@ projects:
     stack: [Python, FastAPI, React, OAuth, MCP]
     updated: 2026-07
 
+  - name: dolemy
+    category: ai
+    status: live
+    summary: 일상으로 반복하는 일과 운영 업무를 지원하는 어시스턴트 AI 비서
+
   - name: AiMER
     category: ai
     status: ended
@@ -122,8 +127,11 @@ projects:
     stack: [TypeScript]
     link: https://sacheonseong.mycsbot.com/
     repos: [sacheonseong]
+    ios: https://apps.apple.com/kr/app/id6821350907
+    play: https://play.google.com/store/apps/details?id=com.mycsbot.sacheonseong
     images:
-      - src: assets/screens/sacheonseong.jpg
+      - src: assets/screens/sacheonseong-1.jpg
+      - src: assets/screens/sacheonseong-2.jpg
 
   - name: 보석 맞추기
     category: game
@@ -132,8 +140,10 @@ projects:
     stack: [TypeScript]
     link: https://jewel-match.mycsbot.com/
     repos: [jewel-match]
+    play: https://play.google.com/store/apps/details?id=com.mycsbot.jewelmatch
     images:
-      - src: assets/screens/jewel-match.jpg
+      - src: assets/screens/jewel-match-1.jpg
+      - src: assets/screens/jewel-match-2.jpg
 
   - name: 틀린그림찾기
     category: game
@@ -142,8 +152,10 @@ projects:
     stack: [TypeScript, Python]
     link: https://spot-diff.mycsbot.com/
     repos: [spot-diff]
+    play: https://play.google.com/store/apps/details?id=com.mycsbot.spotdiff
     images:
-      - src: assets/screens/spot-diff.jpg
+      - src: assets/screens/spot-diff-1.jpg
+      - src: assets/screens/spot-diff-2.jpg
 
   - name: 브릭 스톰
     category: game
@@ -152,8 +164,10 @@ projects:
     stack: [TypeScript, Capacitor]
     link: https://brick-storm.mycsbot.com/
     repos: [brick-storm]
+    play: https://play.google.com/store/apps/details?id=com.mycsbot.brickstorm
     images:
-      - src: assets/screens/brick-storm.jpg
+      - src: assets/screens/brick-storm-1.jpg
+      - src: assets/screens/brick-storm-2.jpg
 
   - name: 왼쪽 오른쪽
     category: game
@@ -162,8 +176,10 @@ projects:
     stack: [TypeScript]
     link: https://left-right.mycsbot.com/
     repos: [left-right]
+    play: https://play.google.com/store/apps/details?id=com.mycsbot.leftright
     images:
-      - src: assets/screens/left-right.jpg
+      - src: assets/screens/left-right-1.jpg
+      - src: assets/screens/left-right-2.jpg
 
   - name: 폴짝 러너
     category: game
@@ -172,8 +188,10 @@ projects:
     stack: [TypeScript]
     link: https://hop-run.mycsbot.com/
     repos: [hop-run]
+    play: https://play.google.com/store/apps/details?id=com.mycsbot.hoprun
     images:
-      - src: assets/screens/hop-run.jpg
+      - src: assets/screens/hop-run-1.jpg
+      - src: assets/screens/hop-run-2.jpg
 
   - name: 두더지 잡기
     category: game
@@ -182,8 +200,10 @@ projects:
     stack: [TypeScript]
     link: https://mole-catch.mycsbot.com/
     repos: [mole-catch]
+    play: https://play.google.com/store/apps/details?id=com.mycsbot.molecatch
     images:
-      - src: assets/screens/mole-catch.jpg
+      - src: assets/screens/mole-catch-1.jpg
+      - src: assets/screens/mole-catch-2.jpg
 
   - name: 카드 뒤집기
     category: game
@@ -193,7 +213,8 @@ projects:
     link: https://card-flip.mycsbot.com/
     repos: [card-flip]
     images:
-      - src: assets/screens/card-flip.jpg
+      - src: assets/screens/card-flip-1.jpg
+      - src: assets/screens/card-flip-2.jpg
 
   - name: 워터 레스큐
     category: game
@@ -213,7 +234,8 @@ projects:
     link: https://farm-rush.mycsbot.com/
     repos: [farm-rush]
     images:
-      - src: assets/screens/farm-rush.jpg
+      - src: assets/screens/farm-rush-1.jpg
+      - src: assets/screens/farm-rush-2.jpg
 
   - name: Abyss Relay
     category: game

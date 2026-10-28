@@ -15,13 +15,14 @@
 ## 프로젝트
 
 <!-- projects:start -->
-> 총 21개 · 🟢 운영 중 15 · 🟡 개발 중 3 · ⚪ 미운영 3
+> 총 22개 · 🟢 운영 중 16 · 🟡 개발 중 3 · ⚪ 미운영 3
 
 ### 서비스 · AI · 인프라
 
 | 분야 | 프로젝트 | 한 줄 소개 | 상태 | 최근 갱신 |
 |---|---|---|---|---|
 | AI · MCP | **Simsim AI 비서** | 영수증 추출·기관 양식 문서 작성을 돕는 AI 비서와 원격 MCP 서버 | 🟢 운영 중 | 2026-07 |
+| AI · MCP | **dolemy** | 일상으로 반복하는 일과 운영 업무를 지원하는 어시스턴트 AI 비서 | 🟢 운영 중 | - |
 | Gridmint 트레이딩 | **Gridmint Bots** | 그리드봇·시그널봇·스캘퍼를 한 콘솔에서 생성·정지·관리 | 🟢 운영 중 | 2026-10-17 |
 | Gridmint 트레이딩 | **Gridmint Ledger** | 여러 거래소의 자산·수익·거래 내역을 모아 KRW·USDT 구분 표시 | 🟢 운영 중 | 2026-09-23 |
 | 서비스 · 도구 | **UMMA 배달 주문 서비스** | 사용자 앱·배달기사 앱·관리자 웹·백엔드 외주 개발 (실서비스라 화면 비공개) | 🟢 운영 중 | 2026-10-28 |
@@ -36,6 +37,12 @@
 - OpenAPI에서 MCP 도구를 자동 생성해 API 전체를 AI에 제공
 - 메모·이미지·Drive·RAG API, Slack 등 대화 환경에서 사용
 - 기술: Python · FastAPI · React · OAuth · MCP
+
+
+</details>
+<details>
+<summary><b>dolemy</b> — 일상으로 반복하는 일과 운영 업무를 지원하는 어시스턴트 AI 비서</summary>
+
 
 
 </details>
@@ -90,7 +97,7 @@
 <summary><b>A4 Workshop</b> — 한글 쓰기 연습용 A4 학습지 생성기</summary>
 
 - 기술: HTML · JavaScript
-- 링크: https://muyoul.github.io/a4workshop/
+- 웹: https://muyoul.github.io/a4workshop/
 
 <img src="assets/screens/a4workshop.jpg" alt="A4 Workshop 화면" width="600">
 
@@ -144,97 +151,112 @@
 
 ### 게임
 
-| 프로젝트 | 한 줄 소개 | 상태 | 최근 갱신 |
-|---|---|---|---|
-| **[틀린그림찾기](https://spot-diff.mycsbot.com/)** | AI 이미지 생성 파이프라인으로 그림 100단계 제작 | 🟢 운영 중 | 2026-10-28 |
-| **[사천성](https://sacheonseong.mycsbot.com/)** | 꺾인 선 3번 규칙 짝맞추기, 단계마다 판 확장·경로 시각화 | 🟢 운영 중 | 2026-10-27 |
-| **[보석 맞추기](https://jewel-match.mycsbot.com/)** | 1,200단계 매치3, 목표 7종을 단계 생성기로 생성 | 🟢 운영 중 | 2026-10-27 |
-| **[브릭 스톰](https://brick-storm.mycsbot.com/)** | 한 손가락 조준·발사 벽돌깨기, 스토어판 86개 언어 | 🟢 운영 중 | 2026-10-27 |
-| **[폴짝 러너](https://hop-run.mycsbot.com/)** | 원터치 러너 | 🟢 운영 중 | 2026-10-27 |
-| **[왼쪽 오른쪽](https://left-right.mycsbot.com/)** | 봄나물은 밥상, 봄꽃은 꽃병으로 나누는 1분 좌우 나누기 | 🟢 운영 중 | 2026-10-06 |
-| **[두더지 잡기](https://mole-catch.mycsbot.com/)** | 60초 아케이드 | 🟢 운영 중 | 2026-10-06 |
-| **[카드 뒤집기](https://card-flip.mycsbot.com/)** | 기억력 짝 맞추기 | 🟢 운영 중 | 2026-10-06 |
-| **[워터 레스큐](https://water-rescue.mycsbot.com/)** | 관을 돌리고 옮겨 물길을 잇는 현장 출동 퍼즐 | 🟡 개발 중 | 2026-10-27 |
-| **[Farm Rush](https://farm-rush.mycsbot.com/)** | 터치로 즐기는 오리지널 농장 경영 게임, 1,000 스테이지 | 🟡 개발 중 | 2026-10-21 |
-| **Abyss Relay** | 전력을 배분하며 3분을 버티는 절차 생성 잠수함 생존 게임 | 🟡 개발 중 | 2026-09-25 |
+| 프로젝트 | 한 줄 소개 | 상태 | 스토어 | 최근 갱신 |
+|---|---|---|---|---|
+| **[틀린그림찾기](https://spot-diff.mycsbot.com/)** | AI 이미지 생성 파이프라인으로 그림 100단계 제작 | 🟢 운영 중 | [Google Play](https://play.google.com/store/apps/details?id=com.mycsbot.spotdiff) | 2026-10-28 |
+| **[사천성](https://sacheonseong.mycsbot.com/)** | 꺾인 선 3번 규칙 짝맞추기, 단계마다 판 확장·경로 시각화 | 🟢 운영 중 | [Google Play](https://play.google.com/store/apps/details?id=com.mycsbot.sacheonseong) · [App Store](https://apps.apple.com/kr/app/id6821350907) | 2026-10-27 |
+| **[보석 맞추기](https://jewel-match.mycsbot.com/)** | 1,200단계 매치3, 목표 7종을 단계 생성기로 생성 | 🟢 운영 중 | [Google Play](https://play.google.com/store/apps/details?id=com.mycsbot.jewelmatch) | 2026-10-27 |
+| **[브릭 스톰](https://brick-storm.mycsbot.com/)** | 한 손가락 조준·발사 벽돌깨기, 스토어판 86개 언어 | 🟢 운영 중 | [Google Play](https://play.google.com/store/apps/details?id=com.mycsbot.brickstorm) | 2026-10-27 |
+| **[폴짝 러너](https://hop-run.mycsbot.com/)** | 원터치 러너 | 🟢 운영 중 | [Google Play](https://play.google.com/store/apps/details?id=com.mycsbot.hoprun) | 2026-10-27 |
+| **[왼쪽 오른쪽](https://left-right.mycsbot.com/)** | 봄나물은 밥상, 봄꽃은 꽃병으로 나누는 1분 좌우 나누기 | 🟢 운영 중 | [Google Play](https://play.google.com/store/apps/details?id=com.mycsbot.leftright) | 2026-10-06 |
+| **[두더지 잡기](https://mole-catch.mycsbot.com/)** | 60초 아케이드 | 🟢 운영 중 | [Google Play](https://play.google.com/store/apps/details?id=com.mycsbot.molecatch) | 2026-10-06 |
+| **[카드 뒤집기](https://card-flip.mycsbot.com/)** | 기억력 짝 맞추기 | 🟢 운영 중 | - | 2026-10-06 |
+| **[워터 레스큐](https://water-rescue.mycsbot.com/)** | 관을 돌리고 옮겨 물길을 잇는 현장 출동 퍼즐 | 🟡 개발 중 | - | 2026-10-27 |
+| **[Farm Rush](https://farm-rush.mycsbot.com/)** | 터치로 즐기는 오리지널 농장 경영 게임, 1,000 스테이지 | 🟡 개발 중 | - | 2026-10-21 |
+| **Abyss Relay** | 전력을 배분하며 3분을 버티는 절차 생성 잠수함 생존 게임 | 🟡 개발 중 | - | 2026-09-25 |
 
 <details>
 <summary><b>틀린그림찾기</b> — AI 이미지 생성 파이프라인으로 그림 100단계 제작</summary>
 
 - 기술: TypeScript · Python
-- 링크: https://spot-diff.mycsbot.com/
+- 웹: https://spot-diff.mycsbot.com/
+- 스토어: [Google Play](https://play.google.com/store/apps/details?id=com.mycsbot.spotdiff)
 
-<img src="assets/screens/spot-diff.jpg" alt="틀린그림찾기 화면" width="240">
+<img src="assets/screens/spot-diff-1.jpg" alt="틀린그림찾기 화면" width="240">
+<img src="assets/screens/spot-diff-2.jpg" alt="틀린그림찾기 화면" width="240">
 
 </details>
 <details>
 <summary><b>사천성</b> — 꺾인 선 3번 규칙 짝맞추기, 단계마다 판 확장·경로 시각화</summary>
 
 - 기술: TypeScript
-- 링크: https://sacheonseong.mycsbot.com/
+- 웹: https://sacheonseong.mycsbot.com/
+- 스토어: [Google Play](https://play.google.com/store/apps/details?id=com.mycsbot.sacheonseong) · [App Store](https://apps.apple.com/kr/app/id6821350907)
 
-<img src="assets/screens/sacheonseong.jpg" alt="사천성 화면" width="240">
+<img src="assets/screens/sacheonseong-1.jpg" alt="사천성 화면" width="240">
+<img src="assets/screens/sacheonseong-2.jpg" alt="사천성 화면" width="240">
 
 </details>
 <details>
 <summary><b>보석 맞추기</b> — 1,200단계 매치3, 목표 7종을 단계 생성기로 생성</summary>
 
 - 기술: TypeScript
-- 링크: https://jewel-match.mycsbot.com/
+- 웹: https://jewel-match.mycsbot.com/
+- 스토어: [Google Play](https://play.google.com/store/apps/details?id=com.mycsbot.jewelmatch)
 
-<img src="assets/screens/jewel-match.jpg" alt="보석 맞추기 화면" width="240">
+<img src="assets/screens/jewel-match-1.jpg" alt="보석 맞추기 화면" width="240">
+<img src="assets/screens/jewel-match-2.jpg" alt="보석 맞추기 화면" width="240">
 
 </details>
 <details>
 <summary><b>브릭 스톰</b> — 한 손가락 조준·발사 벽돌깨기, 스토어판 86개 언어</summary>
 
 - 기술: TypeScript · Capacitor
-- 링크: https://brick-storm.mycsbot.com/
+- 웹: https://brick-storm.mycsbot.com/
+- 스토어: [Google Play](https://play.google.com/store/apps/details?id=com.mycsbot.brickstorm)
 
-<img src="assets/screens/brick-storm.jpg" alt="브릭 스톰 화면" width="240">
+<img src="assets/screens/brick-storm-1.jpg" alt="브릭 스톰 화면" width="240">
+<img src="assets/screens/brick-storm-2.jpg" alt="브릭 스톰 화면" width="240">
 
 </details>
 <details>
 <summary><b>폴짝 러너</b> — 원터치 러너</summary>
 
 - 기술: TypeScript
-- 링크: https://hop-run.mycsbot.com/
+- 웹: https://hop-run.mycsbot.com/
+- 스토어: [Google Play](https://play.google.com/store/apps/details?id=com.mycsbot.hoprun)
 
-<img src="assets/screens/hop-run.jpg" alt="폴짝 러너 화면" width="240">
+<img src="assets/screens/hop-run-1.jpg" alt="폴짝 러너 화면" width="240">
+<img src="assets/screens/hop-run-2.jpg" alt="폴짝 러너 화면" width="240">
 
 </details>
 <details>
 <summary><b>왼쪽 오른쪽</b> — 봄나물은 밥상, 봄꽃은 꽃병으로 나누는 1분 좌우 나누기</summary>
 
 - 기술: TypeScript
-- 링크: https://left-right.mycsbot.com/
+- 웹: https://left-right.mycsbot.com/
+- 스토어: [Google Play](https://play.google.com/store/apps/details?id=com.mycsbot.leftright)
 
-<img src="assets/screens/left-right.jpg" alt="왼쪽 오른쪽 화면" width="240">
+<img src="assets/screens/left-right-1.jpg" alt="왼쪽 오른쪽 화면" width="240">
+<img src="assets/screens/left-right-2.jpg" alt="왼쪽 오른쪽 화면" width="240">
 
 </details>
 <details>
 <summary><b>두더지 잡기</b> — 60초 아케이드</summary>
 
 - 기술: TypeScript
-- 링크: https://mole-catch.mycsbot.com/
+- 웹: https://mole-catch.mycsbot.com/
+- 스토어: [Google Play](https://play.google.com/store/apps/details?id=com.mycsbot.molecatch)
 
-<img src="assets/screens/mole-catch.jpg" alt="두더지 잡기 화면" width="240">
+<img src="assets/screens/mole-catch-1.jpg" alt="두더지 잡기 화면" width="240">
+<img src="assets/screens/mole-catch-2.jpg" alt="두더지 잡기 화면" width="240">
 
 </details>
 <details>
 <summary><b>카드 뒤집기</b> — 기억력 짝 맞추기</summary>
 
 - 기술: TypeScript
-- 링크: https://card-flip.mycsbot.com/
+- 웹: https://card-flip.mycsbot.com/
 
-<img src="assets/screens/card-flip.jpg" alt="카드 뒤집기 화면" width="240">
+<img src="assets/screens/card-flip-1.jpg" alt="카드 뒤집기 화면" width="240">
+<img src="assets/screens/card-flip-2.jpg" alt="카드 뒤집기 화면" width="240">
 
 </details>
 <details>
 <summary><b>워터 레스큐</b> — 관을 돌리고 옮겨 물길을 잇는 현장 출동 퍼즐</summary>
 
 - 기술: TypeScript
-- 링크: https://water-rescue.mycsbot.com/
+- 웹: https://water-rescue.mycsbot.com/
 
 <img src="assets/screens/water-rescue.jpg" alt="워터 레스큐 화면" width="240">
 
@@ -243,9 +265,10 @@
 <summary><b>Farm Rush</b> — 터치로 즐기는 오리지널 농장 경영 게임, 1,000 스테이지</summary>
 
 - 기술: JavaScript
-- 링크: https://farm-rush.mycsbot.com/
+- 웹: https://farm-rush.mycsbot.com/
 
-<img src="assets/screens/farm-rush.jpg" alt="Farm Rush 화면" width="240">
+<img src="assets/screens/farm-rush-1.jpg" alt="Farm Rush 화면" width="240">
+<img src="assets/screens/farm-rush-2.jpg" alt="Farm Rush 화면" width="240">
 
 </details>
 <details>

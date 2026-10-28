@@ -35,12 +35,20 @@ def last_updated(p, token):
     return max(dates) if dates else str(p.get("updated", "-"))
 
 
+def stores(p):
+    links = [f"[Google Play]({p['play']})" if p.get("play") else "", f"[App Store]({p['ios']})" if p.get("ios") else ""]
+    return " · ".join(l for l in links if l)
+
+
 def render_details(p):
     out = ["<details>", f"<summary><b>{p['name']}</b> — {p['summary']}</summary>", ""]
     out += [f"- {f}" for f in p.get("features", [])]
-    out.append(f"- 기술: {' · '.join(p.get('stack', []))}")
+    if p.get("stack"):
+        out.append(f"- 기술: {' · '.join(p['stack'])}")
     if p.get("link"):
-        out.append(f"- 링크: {p['link']}")
+        out.append(f"- 웹: {p['link']}")
+    if stores(p):
+        out.append(f"- 스토어: {stores(p)}")
     imgs = p.get("images", [])
     if any("caption" in im for im in imgs):  # 설명 달린 여러 장은 2열 표
         out += ["", "<table><tr>"]
@@ -55,15 +63,16 @@ def render_details(p):
 
 
 def render_section(projects, cats, with_category):
-    head = ("| 분야 " if with_category else "") + "| 프로젝트 | 한 줄 소개 | 상태 | 최근 갱신 |"
-    sep = ("|---" if with_category else "") + "|---|---|---|---|"
+    with_store = any(stores(p) for p in projects)
+    head = ("| 분야 " if with_category else "") + "| 프로젝트 | 한 줄 소개 | 상태 |" + (" 스토어 |" if with_store else "") + " 최근 갱신 |"
+    sep = ("|---" if with_category else "") + "|---|---|---|" + ("---|" if with_store else "") + "---|"
 
     def table(ps):
         rows = [head, sep]
         for p in ps:
             name = f"[{p['name']}]({p['link']})" if p.get("link") else p["name"]
             cat = f"| {cats[p['category']]} " if with_category else ""
-            rows.append(f"{cat}| **{name}** | {p['summary']} | {STATUS[p['status']]} | {p['_date']} |")
+            rows.append(f"{cat}| **{name}** | {p['summary']} | {STATUS[p['status']]} |" + (f" {stores(p) or '-'} |" if with_store else "") + f" {p['_date']} |")
         return rows
 
     active = [p for p in projects if p["status"] != "ended"]
