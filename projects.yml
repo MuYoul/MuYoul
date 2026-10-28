@@ -112,6 +112,9 @@ projects:
     stack: [HTML, JavaScript]
     link: https://muyoul.github.io/a4workshop/
     repos: [a4workshop]
+    images:
+      - src: assets/screens/a4workshop.jpg
+        width: 600
 
   - name: appintoss-kit · 게임 제작 매뉴얼
     category: game
@@ -131,6 +134,8 @@ projects:
     stack: [TypeScript]
     link: https://sacheonseong.mycsbot.com/
     repos: [sacheonseong]
+    images:
+      - src: assets/screens/sacheonseong.jpg
 
   - name: 보석 맞추기
     category: game
@@ -139,6 +144,8 @@ projects:
     stack: [TypeScript]
     link: https://jewel-match.mycsbot.com/
     repos: [jewel-match]
+    images:
+      - src: assets/screens/jewel-match.jpg
 
   - name: 틀린그림찾기
     category: game
@@ -147,6 +154,8 @@ projects:
     stack: [TypeScript, Python]
     link: https://spot-diff.mycsbot.com/
     repos: [spot-diff]
+    images:
+      - src: assets/screens/spot-diff.jpg
 
   - name: 브릭 스톰
     category: game
@@ -155,6 +164,8 @@ projects:
     stack: [TypeScript, Capacitor]
     link: https://brick-storm.mycsbot.com/
     repos: [brick-storm]
+    images:
+      - src: assets/screens/brick-storm.jpg
 
   - name: 왼쪽 오른쪽
     category: game
@@ -163,6 +174,8 @@ projects:
     stack: [TypeScript]
     link: https://left-right.mycsbot.com/
     repos: [left-right]
+    images:
+      - src: assets/screens/left-right.jpg
 
   - name: 폴짝 러너
     category: game
@@ -171,6 +184,8 @@ projects:
     stack: [TypeScript]
     link: https://hop-run.mycsbot.com/
     repos: [hop-run]
+    images:
+      - src: assets/screens/hop-run.jpg
 
   - name: 두더지 잡기
     category: game
@@ -179,6 +194,8 @@ projects:
     stack: [TypeScript]
     link: https://mole-catch.mycsbot.com/
     repos: [mole-catch]
+    images:
+      - src: assets/screens/mole-catch.jpg
 
   - name: 카드 뒤집기
     category: game
@@ -187,6 +204,8 @@ projects:
     stack: [TypeScript]
     link: https://card-flip.mycsbot.com/
     repos: [card-flip]
+    images:
+      - src: assets/screens/card-flip.jpg
 
   - name: 워터 레스큐
     category: game
@@ -195,13 +214,18 @@ projects:
     stack: [TypeScript]
     link: https://water-rescue.mycsbot.com/
     repos: [water-rescue]
+    images:
+      - src: assets/screens/water-rescue.jpg
 
   - name: Farm Rush
     category: game
     status: dev
     summary: 터치로 즐기는 오리지널 농장 경영 게임, 1,000 스테이지
     stack: [JavaScript]
+    link: https://farm-rush.mycsbot.com/
     repos: [farm-rush]
+    images:
+      - src: assets/screens/farm-rush.jpg
 
   - name: Abyss Relay
     category: game

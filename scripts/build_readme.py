@@ -15,7 +15,7 @@ import yaml
 ROOT = Path(__file__).resolve().parent.parent
 OWNER = "MuYoul"
 START, END = "<!-- projects:start -->", "<!-- projects:end -->"
-STATUS = {"live": "🟢 운영 중", "dev": "🟡 개발 중", "ended": "⚪ 종료"}
+STATUS = {"live": "🟢 운영 중", "dev": "🟡 개발 중", "ended": "⚪ 미운영"}
 
 
 def pushed_at(repo, token):
@@ -35,48 +35,66 @@ def last_updated(p, token):
     return max(dates) if dates else str(p.get("updated", "-"))
 
 
+def render_details(p):
+    out = ["<details>", f"<summary><b>{p['name']}</b> — {p['summary']}</summary>", ""]
+    out += [f"- {f}" for f in p.get("features", [])]
+    out.append(f"- 기술: {' · '.join(p.get('stack', []))}")
+    if p.get("link"):
+        out.append(f"- 링크: {p['link']}")
+    imgs = p.get("images", [])
+    if any("caption" in im for im in imgs):  # 설명 달린 여러 장은 2열 표
+        out += ["", "<table><tr>"]
+        for i, im in enumerate(imgs):
+            if i and i % 2 == 0:
+                out.append("</tr><tr>")
+            out.append(f'<td width="50%"><img src="{im["src"]}" alt="{im["caption"]}"><br><sub>{im["caption"]}</sub></td>')
+        out.append("</tr></table>")
+    else:
+        out += ["", *(f'<img src="{im["src"]}" alt="{p["name"]} 화면" width="{im.get("width", 240)}">' for im in imgs)]
+    return out + ["", "</details>"]
+
+
+def render_section(projects, cats, with_category):
+    head = ("| 분야 " if with_category else "") + "| 프로젝트 | 한 줄 소개 | 상태 | 최근 갱신 |"
+    sep = ("|---" if with_category else "") + "|---|---|---|---|"
+
+    def table(ps):
+        rows = [head, sep]
+        for p in ps:
+            name = f"[{p['name']}]({p['link']})" if p.get("link") else p["name"]
+            cat = f"| {cats[p['category']]} " if with_category else ""
+            rows.append(f"{cat}| **{name}** | {p['summary']} | {STATUS[p['status']]} | {p['_date']} |")
+        return rows
+
+    active = [p for p in projects if p["status"] != "ended"]
+    ended = [p for p in projects if p["status"] == "ended"]
+    out = table(active) + [""]
+    for p in active:
+        out += render_details(p)
+    if ended:
+        out += ["", "<details>", f"<summary>⚪ 미운영 {len(ended)}개 보기</summary>", ""] + table(ended) + [""]
+        for p in ended:
+            out += render_details(p)
+        out += ["", "</details>"]
+    return out
+
+
 def render(data, token):
     cats = data["categories"]
     projects = data["projects"]
     for p in projects:
         p["_date"] = last_updated(p, token)
-    order = list(cats)
-    # 분야 순서 → 같은 분야 안에서는 최근 갱신 순
+    order, status_order = list(cats), list(STATUS)
+    # 상태(운영 → 개발 → 미운영) → 분야 → 최근 갱신 순
     projects.sort(key=lambda p: p["_date"], reverse=True)
-    projects.sort(key=lambda p: order.index(p["category"]))
+    projects.sort(key=lambda p: (status_order.index(p["status"]), order.index(p["category"])))
 
-    out = [
-        f"> 총 {len(projects)}개 · 🟢 운영 중 {sum(p['status'] == 'live' for p in projects)}"
-        f" · 🟡 개발 중 {sum(p['status'] == 'dev' for p in projects)}"
-        f" · ⚪ 종료 {sum(p['status'] == 'ended' for p in projects)}",
-        "",
-        "| 분야 | 프로젝트 | 한 줄 소개 | 상태 | 최근 갱신 |",
-        "|---|---|---|---|---|",
-    ]
-    for p in projects:
-        name = f"[{p['name']}]({p['link']})" if p.get("link") else p["name"]
-        out.append(f"| {cats[p['category']]} | **{name}** | {p['summary']} | {STATUS[p['status']]} | {p['_date']} |")
-
-    for key, title in cats.items():
-        group = [p for p in projects if p["category"] == key]
-        if not group:
-            continue
-        out += ["", f"### {title}", ""]
-        for p in group:
-            out += [f"<details>", f"<summary><b>{p['name']}</b> · {STATUS[p['status']]} — {p['summary']}</summary>", ""]
-            out += [f"- {f}" for f in p.get("features", [])]
-            out.append(f"- 기술: {' · '.join(p.get('stack', []))}")
-            if p.get("link"):
-                out.append(f"- 링크: {p['link']}")
-            imgs = p.get("images", [])
-            if imgs:
-                out += ["", "<table><tr>"]
-                for i, im in enumerate(imgs):
-                    if i and i % 2 == 0:
-                        out.append("</tr><tr>")
-                    out.append(f'<td width="50%"><img src="{im["src"]}" alt="{im["caption"]}"><br><sub>{im["caption"]}</sub></td>')
-                out.append("</tr></table>")
-            out += ["", "</details>"]
+    games = [p for p in projects if p["category"] == "game"]
+    others = [p for p in projects if p["category"] != "game"]
+    count = lambda s: sum(p["status"] == s for p in projects)
+    out = [f"> 총 {len(projects)}개 · 🟢 운영 중 {count('live')} · 🟡 개발 중 {count('dev')} · ⚪ 미운영 {count('ended')}", ""]
+    out += ["### 서비스 · AI · 인프라", ""] + render_section(others, cats, True)
+    out += ["", "### 게임", ""] + render_section(games, cats, False)
     return "\n".join(out)
 
 
