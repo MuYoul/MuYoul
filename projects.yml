@@ -87,8 +87,8 @@ projects:
 
   - name: 슬기로운 AI 공방
     category: service
-    status: dev
-    summary: 멤버 실습·발표·출석·운영 현황을 한곳에서 관리하는 플랫폼
+    status: ended
+    summary: 멤버 실습·발표·출석·운영 현황을 한곳에서 관리하는 플랫폼 (운영 중지)
     features:
       - 멤버 웹·운영진 웹(Next.js 정적) + FastAPI 백엔드
       - Terraform으로 CloudFront·S3·인증서, GitHub Actions 배포
