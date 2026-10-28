@@ -1,0 +1,220 @@
+# 프로필 README의 프로젝트 목록 원본.
+# 이 파일만 고치면 GitHub Actions가 README의 프로젝트 영역을 다시 만든다.
+#
+# status: live(운영 중) | dev(개발 중) | ended(종료)
+# repos:  최근 갱신일을 읽어 올 저장소(여러 개면 가장 최근 값). 없으면 updated 값을 쓴다.
+
+categories:
+  ai: AI · MCP
+  trading: Gridmint 트레이딩
+  service: 서비스 · 도구
+  game: 게임
+  infra: 인프라 · 운영
+
+projects:
+  - name: Simsim AI 비서
+    category: ai
+    status: live
+    summary: 영수증 추출·기관 양식 문서 작성을 돕는 AI 비서와 원격 MCP 서버
+    features:
+      - Google 로그인 + OAuth 원격 MCP 서버
+      - OpenAPI에서 MCP 도구를 자동 생성해 API 전체를 AI에 제공
+      - 메모·이미지·Drive·RAG API, Slack 등 대화 환경에서 사용
+    stack: [Python, FastAPI, React, OAuth, MCP]
+    link: https://simsim.mycsbot.com/
+    updated: 2026-07
+
+  - name: AiMER
+    category: ai
+    status: ended
+    summary: 샘플 데이터로 병명 후보를 추천해 병리 보고서를 만드는 실험
+    features:
+      - 샘플 입력·보고서 생성 API를 MCP로 제공
+      - 협업 의사의 채팅에 연결해 사이트 없이 보고서 생성
+      - 테스트 검토 후 품질·비용 문제로 종료 (실제 의료 업무 미사용)
+    stack: [TypeScript, Express, Prisma, Next.js, MCP]
+    repos: [aimer, aimer-mcp]
+
+  - name: Gridmint Bots
+    category: trading
+    status: live
+    summary: 그리드봇·시그널봇·스캘퍼를 한 콘솔에서 생성·정지·관리
+    features:
+      - 거래소 잔고를 포지션 단위로 나눠 담당 봇을 추적
+      - 커밋(SHA) 고정 릴리스·롤백, Prometheus/Grafana 관측
+      - 연동 거래소 Upbit · Coinone · Bitget · OKX
+    stack: [Python, FastAPI, PostgreSQL, React, TypeScript]
+    repos: [gridmint-scalper]
+    images:
+      - src: assets/gridmint/grid-bots.jpg
+        caption: 그리드봇 — 봇별 상태·예산·손익·미청산 한도
+      - src: assets/gridmint/flow.jpg
+        caption: 흐름도 — 거래소 잔고 → 포지션 → 담당 봇 소유권
+      - src: assets/gridmint/position-manager.jpg
+        caption: 포지션 관리자 — 거래소별 보유 자산을 봇에 편입·보호
+      - src: assets/gridmint/scalper.jpg
+        caption: 스캘퍼 — 선물 포지션 수동 진입·청산 콘솔
+
+  - name: Gridmint Ledger
+    category: trading
+    status: live
+    summary: 여러 거래소의 자산·수익·거래 내역을 모아 KRW·USDT 구분 표시
+    features:
+      - 거래소 통합 자산·손익 조회
+      - 백엔드 API를 MCP로 제공해 AI로 필요한 뷰를 만들도록 설계
+    stack: [Next.js, React, Python, FastAPI, MCP]
+    repos: [gridmint-rework]
+    images:
+      - src: assets/gridmint/ledger-assets.jpg
+        caption: 거래소 통합 자산
+
+  - name: Candle Collector
+    category: trading
+    status: ended
+    summary: Binance·Bitget·OKX 1분봉 수집과 OHLC API·MCP 서버 (2026-09 종료)
+    stack: [TypeScript, SQLite, MCP]
+    repos: [candle-collector]
+
+  - name: UMMA 배달 주문 서비스
+    category: service
+    status: live
+    summary: 사용자 앱·배달기사 앱·관리자 웹·백엔드 외주 개발 (실서비스라 화면 비공개)
+    features:
+      - Flutter 사용자·배달기사 앱, 관제용 관리자 웹
+      - 결제·지도 연동, Docker Compose + Cloudflare Tunnel 배포
+    stack: [Flutter, Dart, Python, Docker Compose, Cloudflare Tunnel]
+    repos: [umma, umma_backend, umma_userapp, umma_adminapp]
+
+  - name: 슬기로운 AI 공방
+    category: service
+    status: dev
+    summary: 멤버 실습·발표·출석·운영 현황을 한곳에서 관리하는 플랫폼
+    features:
+      - 멤버 웹·운영진 웹(Next.js 정적) + FastAPI 백엔드
+      - Terraform으로 CloudFront·S3·인증서, GitHub Actions 배포
+    stack: [Next.js, FastAPI, SQLAlchemy, Terraform, GitHub Actions]
+    repos: [wiseaiworkshop]
+
+  - name: Ablog (autoblog)
+    category: service
+    status: live
+    summary: Google Docs 원고를 WordPress·네이버 카페·네이버 블로그에 자동 게시
+    features:
+      - Docs 인라인 이미지를 순서대로 올려 본문에 그대로 배치
+      - Instagram·Threads용 파생 글 생성·편집
+    stack: [Python, Google Docs API, WordPress REST API]
+    repos: [autoblog]
+
+  - name: A4 Workshop
+    category: service
+    status: live
+    summary: 한글 쓰기 연습용 A4 학습지 생성기
+    stack: [HTML, JavaScript]
+    link: https://muyoul.github.io/a4workshop/
+    repos: [a4workshop]
+
+  - name: appintoss-kit · 게임 제작 매뉴얼
+    category: game
+    status: live
+    summary: 모든 게임이 쓰는 공통 셸과, 게임 7종을 만들며 겪은 절차·이슈 매뉴얼
+    features:
+      - 메뉴·단계·저장·효과음 + 플랫폼별 저장·광고·결제를 셸에 모음
+      - 게임마다 플랫폼 파일만 바꿔 토스 앱인토스·웹·Android/iOS로 빌드
+      - 출시 절차, 이슈 카탈로그, 광고·결제·GA4 가이드
+    stack: [TypeScript, Capacitor, Cloudflare Pages, AdMob]
+    repos: [appintoss-kit, appintoss, guide-games]
+
+  - name: 사천성
+    category: game
+    status: live
+    summary: 꺾인 선 3번 규칙 짝맞추기, 단계마다 판 확장·경로 시각화
+    stack: [TypeScript]
+    link: https://sacheonseong.mycsbot.com/
+    repos: [sacheonseong]
+
+  - name: 보석 맞추기
+    category: game
+    status: live
+    summary: 1,200단계 매치3, 목표 7종을 단계 생성기로 생성
+    stack: [TypeScript]
+    link: https://jewel-match.mycsbot.com/
+    repos: [jewel-match]
+
+  - name: 틀린그림찾기
+    category: game
+    status: live
+    summary: AI 이미지 생성 파이프라인으로 그림 100단계 제작
+    stack: [TypeScript, Python]
+    link: https://spot-diff.mycsbot.com/
+    repos: [spot-diff]
+
+  - name: 브릭 스톰
+    category: game
+    status: live
+    summary: 한 손가락 조준·발사 벽돌깨기, 스토어판 86개 언어
+    stack: [TypeScript, Capacitor]
+    link: https://brick-storm.mycsbot.com/
+    repos: [brick-storm]
+
+  - name: 왼쪽 오른쪽
+    category: game
+    status: live
+    summary: 봄나물은 밥상, 봄꽃은 꽃병으로 나누는 1분 좌우 나누기
+    stack: [TypeScript]
+    link: https://left-right.mycsbot.com/
+    repos: [left-right]
+
+  - name: 폴짝 러너
+    category: game
+    status: live
+    summary: 원터치 러너
+    stack: [TypeScript]
+    link: https://hop-run.mycsbot.com/
+    repos: [hop-run]
+
+  - name: 두더지 잡기
+    category: game
+    status: live
+    summary: 60초 아케이드
+    stack: [TypeScript]
+    link: https://mole-catch.mycsbot.com/
+    repos: [mole-catch]
+
+  - name: 카드 뒤집기
+    category: game
+    status: live
+    summary: 기억력 짝 맞추기
+    stack: [TypeScript]
+    link: https://card-flip.mycsbot.com/
+    repos: [card-flip]
+
+  - name: 워터 레스큐
+    category: game
+    status: dev
+    summary: 관을 돌리고 옮겨 물길을 잇는 현장 출동 퍼즐
+    stack: [TypeScript]
+    link: https://water-rescue.mycsbot.com/
+    repos: [water-rescue]
+
+  - name: Farm Rush
+    category: game
+    status: dev
+    summary: 터치로 즐기는 오리지널 농장 경영 게임, 1,000 스테이지
+    stack: [JavaScript]
+    repos: [farm-rush]
+
+  - name: Abyss Relay
+    category: game
+    status: dev
+    summary: 전력을 배분하며 3분을 버티는 절차 생성 잠수함 생존 게임
+    stack: [TypeScript]
+    repos: [abyss-relay]
+
+  - name: lemy0715-observability
+    category: infra
+    status: live
+    summary: 모든 서비스의 지표를 모으는 중앙 Prometheus·Grafana 플랫폼
+    features:
+      - 각 서비스는 Alloy 수집기로 remote-write, 플랫폼은 이 저장소가 관리
+    stack: [Prometheus, Grafana, Docker Compose]
+    repos: [lemy0715-observability]
