@@ -15,7 +15,7 @@
 ## 프로젝트
 
 <!-- projects:start -->
-> 총 22개 · 🟢 운영 중 16 · 🟡 개발 중 3 · ⚪ 미운영 3
+> 총 21개 · 🟢 운영 중 15 · 🟡 개발 중 3 · ⚪ 미운영 3
 
 ### 서비스 · AI · 인프라
 
@@ -147,7 +147,6 @@
 | 프로젝트 | 한 줄 소개 | 상태 | 최근 갱신 |
 |---|---|---|---|
 | **[틀린그림찾기](https://spot-diff.mycsbot.com/)** | AI 이미지 생성 파이프라인으로 그림 100단계 제작 | 🟢 운영 중 | 2026-10-28 |
-| **appintoss-kit · 게임 제작 매뉴얼** | 모든 게임이 쓰는 공통 셸과, 게임 7종을 만들며 겪은 절차·이슈 매뉴얼 | 🟢 운영 중 | 2026-10-27 |
 | **[사천성](https://sacheonseong.mycsbot.com/)** | 꺾인 선 3번 규칙 짝맞추기, 단계마다 판 확장·경로 시각화 | 🟢 운영 중 | 2026-10-27 |
 | **[보석 맞추기](https://jewel-match.mycsbot.com/)** | 1,200단계 매치3, 목표 7종을 단계 생성기로 생성 | 🟢 운영 중 | 2026-10-27 |
 | **[브릭 스톰](https://brick-storm.mycsbot.com/)** | 한 손가락 조준·발사 벽돌깨기, 스토어판 86개 언어 | 🟢 운영 중 | 2026-10-27 |
@@ -166,16 +165,6 @@
 - 링크: https://spot-diff.mycsbot.com/
 
 <img src="assets/screens/spot-diff.jpg" alt="틀린그림찾기 화면" width="240">
-
-</details>
-<details>
-<summary><b>appintoss-kit · 게임 제작 매뉴얼</b> — 모든 게임이 쓰는 공통 셸과, 게임 7종을 만들며 겪은 절차·이슈 매뉴얼</summary>
-
-- 메뉴·단계·저장·효과음 + 플랫폼별 저장·광고·결제를 셸에 모음
-- 게임마다 플랫폼 파일만 바꿔 토스 앱인토스·웹·Android/iOS로 빌드
-- 출시 절차, 이슈 카탈로그, 광고·결제·GA4 가이드
-- 기술: TypeScript · Capacitor · Cloudflare Pages · AdMob
-
 
 </details>
 <details>
