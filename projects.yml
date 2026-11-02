@@ -48,6 +48,11 @@ projects:
     category: ai
     status: live
     summary: 일상으로 반복하는 일과 운영 업무를 지원하는 어시스턴트 AI 비서
+    why: AI 에이전트 자동화로 어디까지 할 수 있는지 시험하려고
+    role: 기획·요구사항·검수는 본인, 코드는 주로 AI
+    features:
+      - Ablog와 연동해 블로그 글 자동 발행 중
+      - 게임 마케팅·홍보 자동화 기획 중
 
   - name: AiMER
     category: ai
@@ -103,13 +108,17 @@ projects:
     category: trading
     status: ended
     summary: Binance·Bitget·OKX 1분봉 수집과 OHLC API·MCP 서버 (2026-09 종료)
+    why: Gridmint에서 쓸 시세 데이터를 직접 모으려고
+    role: 기획·요구사항·검수는 본인, 코드는 주로 AI
     stack: [TypeScript, SQLite, MCP]
     repos: [candle-collector]
 
   - name: UMMA 배달 주문 서비스
     category: service
-    status: live
-    summary: 사용자 앱·배달기사 앱·관리자 웹·백엔드 외주 개발 (실서비스라 화면 비공개)
+    status: dev
+    summary: 사용자 앱·배달기사 앱·관리자 웹·백엔드 외주 개발 (알파 테스트 중, 화면 비공개)
+    why: 발주처 의뢰 — 이동 중인 배달 트럭이 실시간으로 주문을 받아 만날 장소로 가는 서비스
+    role: 전체 구조·주문 흐름 설계는 본인, 초기 코드도 직접 작성했고 이후 코드는 주로 AI·본인은 요구사항·검수
     features:
       - Flutter 사용자·배달기사 앱, 관제용 관리자 웹
       - 결제·지도 연동, Docker Compose + Cloudflare Tunnel 배포
@@ -123,6 +132,7 @@ projects:
     features:
       - 멤버 웹·운영진 웹(Next.js 정적) + FastAPI 백엔드
       - Terraform으로 CloudFront·S3·인증서, GitHub Actions 배포
+      - 이용이 없어 운영 중지
     stack: [Next.js, FastAPI, SQLAlchemy, Terraform, GitHub Actions]
     repos: [wiseaiworkshop]
 
@@ -130,6 +140,8 @@ projects:
     category: service
     status: live
     summary: Google Docs 원고를 WordPress·네이버 카페·네이버 블로그에 자동 게시
+    why: 블로그 부업을 하는 주변 사람들을 돕고자
+    role: 기획·요구사항·검수는 본인, 코드는 주로 AI
     features:
       - Docs 인라인 이미지를 순서대로 올려 본문에 그대로 배치
       - Instagram·Threads용 파생 글 생성·편집
@@ -140,6 +152,8 @@ projects:
     category: service
     status: live
     summary: 한글 쓰기 연습용 A4 학습지 생성기
+    why: 아이의 한글 따라쓰기 연습지를 만들려고
+    role: 기획·요구사항·검수는 본인, 코드는 주로 AI
     stack: [HTML, JavaScript]
     link: https://muyoul.github.io/a4workshop/
     repos: [a4workshop]
@@ -151,6 +165,8 @@ projects:
     category: game
     status: live
     summary: 꺾인 선 3번 규칙 짝맞추기, 단계마다 판 확장·경로 시각화
+    why: AI로 게임을 반복 제작하는 흐름 검증과 스토어·앱인토스 수익화
+    role: 기획·요구사항·검수는 본인, 코드는 주로 AI
     stack: [TypeScript]
     link: https://sacheonseong.mycsbot.com/
     repos: [sacheonseong]
@@ -164,6 +180,8 @@ projects:
     category: game
     status: live
     summary: 1,200단계 매치3, 목표 7종을 단계 생성기로 생성
+    why: AI로 게임을 반복 제작하는 흐름 검증과 스토어·앱인토스 수익화
+    role: 기획·요구사항·검수는 본인, 코드는 주로 AI
     stack: [TypeScript]
     link: https://jewel-match.mycsbot.com/
     repos: [jewel-match]
@@ -176,6 +194,8 @@ projects:
     category: game
     status: live
     summary: AI 이미지 생성 파이프라인으로 그림 100단계 제작
+    why: AI로 게임을 반복 제작하는 흐름 검증과 스토어·앱인토스 수익화
+    role: 기획·요구사항·검수는 본인, 코드는 주로 AI
     stack: [TypeScript, Python]
     link: https://spot-diff.mycsbot.com/
     repos: [spot-diff]
@@ -188,6 +208,8 @@ projects:
     category: game
     status: live
     summary: 한 손가락 조준·발사 벽돌깨기, 스토어판 86개 언어
+    why: AI로 게임을 반복 제작하는 흐름 검증과 스토어·앱인토스 수익화
+    role: 기획·요구사항·검수는 본인, 코드는 주로 AI
     stack: [TypeScript, Capacitor]
     link: https://brick-storm.mycsbot.com/
     repos: [brick-storm]
@@ -200,6 +222,8 @@ projects:
     category: game
     status: live
     summary: 봄나물은 밥상, 봄꽃은 꽃병으로 나누는 1분 좌우 나누기
+    why: AI로 게임을 반복 제작하는 흐름 검증과 스토어·앱인토스 수익화
+    role: 기획·요구사항·검수는 본인, 코드는 주로 AI
     stack: [TypeScript]
     link: https://left-right.mycsbot.com/
     repos: [left-right]
@@ -212,6 +236,8 @@ projects:
     category: game
     status: live
     summary: 원터치 러너
+    why: AI로 게임을 반복 제작하는 흐름 검증과 스토어·앱인토스 수익화
+    role: 기획·요구사항·검수는 본인, 코드는 주로 AI
     stack: [TypeScript]
     link: https://hop-run.mycsbot.com/
     repos: [hop-run]
@@ -224,6 +250,8 @@ projects:
     category: game
     status: live
     summary: 60초 아케이드
+    why: AI로 게임을 반복 제작하는 흐름 검증과 스토어·앱인토스 수익화
+    role: 기획·요구사항·검수는 본인, 코드는 주로 AI
     stack: [TypeScript]
     link: https://mole-catch.mycsbot.com/
     repos: [mole-catch]
@@ -236,6 +264,8 @@ projects:
     category: game
     status: live
     summary: 기억력 짝 맞추기
+    why: AI로 게임을 반복 제작하는 흐름 검증과 스토어·앱인토스 수익화
+    role: 기획·요구사항·검수는 본인, 코드는 주로 AI
     stack: [TypeScript]
     link: https://card-flip.mycsbot.com/
     repos: [card-flip]
@@ -247,6 +277,8 @@ projects:
     category: game
     status: dev
     summary: 관을 돌리고 옮겨 물길을 잇는 현장 출동 퍼즐
+    why: AI로 게임을 반복 제작하는 흐름 검증과 스토어·앱인토스 수익화
+    role: 기획·요구사항·검수는 본인, 코드는 주로 AI
     stack: [TypeScript]
     link: https://water-rescue.mycsbot.com/
     repos: [water-rescue]
@@ -257,6 +289,8 @@ projects:
     category: game
     status: dev
     summary: 터치로 즐기는 오리지널 농장 경영 게임, 1,000 스테이지
+    why: AI로 게임을 반복 제작하는 흐름 검증과 스토어·앱인토스 수익화
+    role: 기획·요구사항·검수는 본인, 코드는 주로 AI
     stack: [JavaScript]
     link: https://farm-rush.mycsbot.com/
     repos: [farm-rush]
@@ -268,6 +302,8 @@ projects:
     category: game
     status: dev
     summary: 전력을 배분하며 3분을 버티는 절차 생성 잠수함 생존 게임
+    why: AI로 게임을 반복 제작하는 흐름 검증과 스토어·앱인토스 수익화
+    role: 기획·요구사항·검수는 본인, 코드는 주로 AI
     stack: [TypeScript]
     repos: [abyss-relay]
 

@@ -8,7 +8,7 @@ AI와 함께 서비스와 게임을 기획·개발·배포·운영합니다. 대
 <!-- summary:start -->
 | 내세우는 것 | 근거 | 바로 보기 |
 |---|---|---|
-| **끝까지 내놓고 운영한다** | 22개 중 운영 중 16 · 스토어 출시 게임 7 | [프로젝트](#프로젝트) |
+| **끝까지 내놓고 운영한다** | 22개 중 운영 중 15 · 스토어 출시 게임 7 | [프로젝트](#프로젝트) |
 | **반복을 시스템으로 바꾼다** | 게임 공통 킷·검증 도구 · OpenAPI→MCP 도구 자동 생성 · 커밋 고정 배포·롤백 | [만드는 방식](#만드는-방식) |
 | **AI에게 맡기되 판단은 내가 한다** | 목표·요구사항·검증은 제가, 코드는 주로 AI가 · 품질이 안 나온 AiMER는 직접 종료 | [AI와 일하는 방식](#ai와-일하는-방식) |
 | **운영까지 책임진다** | 모든 서비스 지표를 중앙 Prometheus·Grafana로 수집 · 이전 직장에서 EKS 12개 관측성 전환 | [이전 경력](#이전-경력) |
@@ -17,7 +17,7 @@ AI와 함께 서비스와 게임을 기획·개발·배포·운영합니다. 대
 
 - 2026-11-01 · 틀린그림찾기 — AI 이미지 생성 파이프라인으로 그림 100단계 제작
 - 2026-10-30 · 브릭 스톰 — 한 손가락 조준·발사 벽돌깨기, 스토어판 86개 언어
-- 2026-10-28 · UMMA 배달 주문 서비스 — 사용자 앱·배달기사 앱·관리자 웹·백엔드 외주 개발 (실서비스라 화면 비공개)
+- 2026-10-28 · UMMA 배달 주문 서비스 — 사용자 앱·배달기사 앱·관리자 웹·백엔드 외주 개발 (알파 테스트 중, 화면 비공개)
 - 2026-10-27 · 사천성 — 꺾인 선 3번 규칙 짝맞추기, 단계마다 판 확장·경로 시각화
 - 2026-10-27 · 보석 맞추기 — 1,200단계 매치3, 목표 7종을 단계 생성기로 생성
 <!-- summary:end -->
@@ -39,7 +39,7 @@ AI와 함께 서비스와 게임을 기획·개발·배포·운영합니다. 대
 ## 프로젝트
 
 <!-- projects:start -->
-> 총 22개 · 🟢 운영 중 16 · 🟡 개발 중 3 · ⚪ 미운영 3
+> 총 22개 · 🟢 운영 중 15 · 🟡 개발 중 4 · ⚪ 미운영 3
 
 ### 서비스 · AI · 인프라
 
@@ -49,10 +49,10 @@ AI와 함께 서비스와 게임을 기획·개발·배포·운영합니다. 대
 | AI · MCP | **dolemy** | 일상으로 반복하는 일과 운영 업무를 지원하는 어시스턴트 AI 비서 | 🟢 운영 중 | - |
 | Gridmint 트레이딩 | **Gridmint Bots** | 그리드봇·시그널봇·스캘퍼를 한 콘솔에서 생성·정지·관리 | 🟢 운영 중 | 2026-10-17 |
 | Gridmint 트레이딩 | **Gridmint Ledger** | 여러 거래소의 자산·수익·거래 내역을 모아 KRW·USDT 구분 표시 | 🟢 운영 중 | 2026-09-23 |
-| 서비스 · 도구 | **UMMA 배달 주문 서비스** | 사용자 앱·배달기사 앱·관리자 웹·백엔드 외주 개발 (실서비스라 화면 비공개) | 🟢 운영 중 | 2026-10-28 |
 | 서비스 · 도구 | **Ablog (autoblog)** | Google Docs 원고를 WordPress·네이버 카페·네이버 블로그에 자동 게시 | 🟢 운영 중 | 2026-10-18 |
 | 서비스 · 도구 | **[A4 Workshop](https://muyoul.github.io/a4workshop/)** | 한글 쓰기 연습용 A4 학습지 생성기 | 🟢 운영 중 | 2026-08-15 |
 | 인프라 · 운영 | **lemy0715-observability** | 모든 서비스의 지표를 모으는 중앙 Prometheus·Grafana 플랫폼 | 🟢 운영 중 | 2026-10-17 |
+| 서비스 · 도구 | **UMMA 배달 주문 서비스** | 사용자 앱·배달기사 앱·관리자 웹·백엔드 외주 개발 (알파 테스트 중, 화면 비공개) | 🟡 개발 중 | 2026-10-28 |
 
 <details>
 <summary><b>Simsim AI 비서</b> — 영수증 추출·기관 양식 문서 작성을 돕는 AI 비서와 원격 MCP 서버</summary>
@@ -69,6 +69,10 @@ AI와 함께 서비스와 게임을 기획·개발·배포·운영합니다. 대
 <details>
 <summary><b>dolemy</b> — 일상으로 반복하는 일과 운영 업무를 지원하는 어시스턴트 AI 비서</summary>
 
+- **왜**: AI 에이전트 자동화로 어디까지 할 수 있는지 시험하려고
+- **역할**: 기획·요구사항·검수는 본인, 코드는 주로 AI
+- Ablog와 연동해 블로그 글 자동 발행 중
+- 게임 마케팅·홍보 자동화 기획 중
 
 
 </details>
@@ -106,17 +110,10 @@ AI와 함께 서비스와 게임을 기획·개발·배포·운영합니다. 대
 
 </details>
 <details>
-<summary><b>UMMA 배달 주문 서비스</b> — 사용자 앱·배달기사 앱·관리자 웹·백엔드 외주 개발 (실서비스라 화면 비공개)</summary>
-
-- Flutter 사용자·배달기사 앱, 관제용 관리자 웹
-- 결제·지도 연동, Docker Compose + Cloudflare Tunnel 배포
-- 기술: Flutter · Dart · Python · Docker Compose · Cloudflare Tunnel
-
-
-</details>
-<details>
 <summary><b>Ablog (autoblog)</b> — Google Docs 원고를 WordPress·네이버 카페·네이버 블로그에 자동 게시</summary>
 
+- **왜**: 블로그 부업을 하는 주변 사람들을 돕고자
+- **역할**: 기획·요구사항·검수는 본인, 코드는 주로 AI
 - Docs 인라인 이미지를 순서대로 올려 본문에 그대로 배치
 - Instagram·Threads용 파생 글 생성·편집
 - 기술: Python · Google Docs API · WordPress REST API
@@ -126,6 +123,8 @@ AI와 함께 서비스와 게임을 기획·개발·배포·운영합니다. 대
 <details>
 <summary><b>A4 Workshop</b> — 한글 쓰기 연습용 A4 학습지 생성기</summary>
 
+- **왜**: 아이의 한글 따라쓰기 연습지를 만들려고
+- **역할**: 기획·요구사항·검수는 본인, 코드는 주로 AI
 - 기술: HTML · JavaScript
 - 웹: https://muyoul.github.io/a4workshop/
 
@@ -137,6 +136,17 @@ AI와 함께 서비스와 게임을 기획·개발·배포·운영합니다. 대
 
 - 각 서비스는 Alloy 수집기로 remote-write, 플랫폼은 이 저장소가 관리
 - 기술: Prometheus · Grafana · Docker Compose
+
+
+</details>
+<details>
+<summary><b>UMMA 배달 주문 서비스</b> — 사용자 앱·배달기사 앱·관리자 웹·백엔드 외주 개발 (알파 테스트 중, 화면 비공개)</summary>
+
+- **왜**: 발주처 의뢰 — 이동 중인 배달 트럭이 실시간으로 주문을 받아 만날 장소로 가는 서비스
+- **역할**: 전체 구조·주문 흐름 설계는 본인, 초기 코드도 직접 작성했고 이후 코드는 주로 AI·본인은 요구사항·검수
+- Flutter 사용자·배달기사 앱, 관제용 관리자 웹
+- 결제·지도 연동, Docker Compose + Cloudflare Tunnel 배포
+- 기술: Flutter · Dart · Python · Docker Compose · Cloudflare Tunnel
 
 
 </details>
@@ -165,6 +175,8 @@ AI와 함께 서비스와 게임을 기획·개발·배포·운영합니다. 대
 <details>
 <summary><b>Candle Collector</b> — Binance·Bitget·OKX 1분봉 수집과 OHLC API·MCP 서버 (2026-09 종료)</summary>
 
+- **왜**: Gridmint에서 쓸 시세 데이터를 직접 모으려고
+- **역할**: 기획·요구사항·검수는 본인, 코드는 주로 AI
 - 기술: TypeScript · SQLite · MCP
 
 
@@ -174,6 +186,7 @@ AI와 함께 서비스와 게임을 기획·개발·배포·운영합니다. 대
 
 - 멤버 웹·운영진 웹(Next.js 정적) + FastAPI 백엔드
 - Terraform으로 CloudFront·S3·인증서, GitHub Actions 배포
+- 이용이 없어 운영 중지
 - 기술: Next.js · FastAPI · SQLAlchemy · Terraform · GitHub Actions
 
 
@@ -200,6 +213,8 @@ AI와 함께 서비스와 게임을 기획·개발·배포·운영합니다. 대
 <details>
 <summary><b>틀린그림찾기</b> — AI 이미지 생성 파이프라인으로 그림 100단계 제작</summary>
 
+- **왜**: AI로 게임을 반복 제작하는 흐름 검증과 스토어·앱인토스 수익화
+- **역할**: 기획·요구사항·검수는 본인, 코드는 주로 AI
 - 기술: TypeScript · Python
 - 웹: https://spot-diff.mycsbot.com/
 - 스토어: [Google Play](https://play.google.com/store/apps/details?id=com.mycsbot.spotdiff)
@@ -211,6 +226,8 @@ AI와 함께 서비스와 게임을 기획·개발·배포·운영합니다. 대
 <details>
 <summary><b>브릭 스톰</b> — 한 손가락 조준·발사 벽돌깨기, 스토어판 86개 언어</summary>
 
+- **왜**: AI로 게임을 반복 제작하는 흐름 검증과 스토어·앱인토스 수익화
+- **역할**: 기획·요구사항·검수는 본인, 코드는 주로 AI
 - 기술: TypeScript · Capacitor
 - 웹: https://brick-storm.mycsbot.com/
 - 스토어: [Google Play](https://play.google.com/store/apps/details?id=com.mycsbot.brickstorm)
@@ -222,6 +239,8 @@ AI와 함께 서비스와 게임을 기획·개발·배포·운영합니다. 대
 <details>
 <summary><b>사천성</b> — 꺾인 선 3번 규칙 짝맞추기, 단계마다 판 확장·경로 시각화</summary>
 
+- **왜**: AI로 게임을 반복 제작하는 흐름 검증과 스토어·앱인토스 수익화
+- **역할**: 기획·요구사항·검수는 본인, 코드는 주로 AI
 - 기술: TypeScript
 - 웹: https://sacheonseong.mycsbot.com/
 - 스토어: [Google Play](https://play.google.com/store/apps/details?id=com.mycsbot.sacheonseong) · [App Store](https://apps.apple.com/kr/app/id6821350907)
@@ -233,6 +252,8 @@ AI와 함께 서비스와 게임을 기획·개발·배포·운영합니다. 대
 <details>
 <summary><b>보석 맞추기</b> — 1,200단계 매치3, 목표 7종을 단계 생성기로 생성</summary>
 
+- **왜**: AI로 게임을 반복 제작하는 흐름 검증과 스토어·앱인토스 수익화
+- **역할**: 기획·요구사항·검수는 본인, 코드는 주로 AI
 - 기술: TypeScript
 - 웹: https://jewel-match.mycsbot.com/
 - 스토어: [Google Play](https://play.google.com/store/apps/details?id=com.mycsbot.jewelmatch)
@@ -244,6 +265,8 @@ AI와 함께 서비스와 게임을 기획·개발·배포·운영합니다. 대
 <details>
 <summary><b>폴짝 러너</b> — 원터치 러너</summary>
 
+- **왜**: AI로 게임을 반복 제작하는 흐름 검증과 스토어·앱인토스 수익화
+- **역할**: 기획·요구사항·검수는 본인, 코드는 주로 AI
 - 기술: TypeScript
 - 웹: https://hop-run.mycsbot.com/
 - 스토어: [Google Play](https://play.google.com/store/apps/details?id=com.mycsbot.hoprun)
@@ -255,6 +278,8 @@ AI와 함께 서비스와 게임을 기획·개발·배포·운영합니다. 대
 <details>
 <summary><b>왼쪽 오른쪽</b> — 봄나물은 밥상, 봄꽃은 꽃병으로 나누는 1분 좌우 나누기</summary>
 
+- **왜**: AI로 게임을 반복 제작하는 흐름 검증과 스토어·앱인토스 수익화
+- **역할**: 기획·요구사항·검수는 본인, 코드는 주로 AI
 - 기술: TypeScript
 - 웹: https://left-right.mycsbot.com/
 - 스토어: [Google Play](https://play.google.com/store/apps/details?id=com.mycsbot.leftright)
@@ -266,6 +291,8 @@ AI와 함께 서비스와 게임을 기획·개발·배포·운영합니다. 대
 <details>
 <summary><b>두더지 잡기</b> — 60초 아케이드</summary>
 
+- **왜**: AI로 게임을 반복 제작하는 흐름 검증과 스토어·앱인토스 수익화
+- **역할**: 기획·요구사항·검수는 본인, 코드는 주로 AI
 - 기술: TypeScript
 - 웹: https://mole-catch.mycsbot.com/
 - 스토어: [Google Play](https://play.google.com/store/apps/details?id=com.mycsbot.molecatch)
@@ -277,6 +304,8 @@ AI와 함께 서비스와 게임을 기획·개발·배포·운영합니다. 대
 <details>
 <summary><b>카드 뒤집기</b> — 기억력 짝 맞추기</summary>
 
+- **왜**: AI로 게임을 반복 제작하는 흐름 검증과 스토어·앱인토스 수익화
+- **역할**: 기획·요구사항·검수는 본인, 코드는 주로 AI
 - 기술: TypeScript
 - 웹: https://card-flip.mycsbot.com/
 
@@ -287,6 +316,8 @@ AI와 함께 서비스와 게임을 기획·개발·배포·운영합니다. 대
 <details>
 <summary><b>워터 레스큐</b> — 관을 돌리고 옮겨 물길을 잇는 현장 출동 퍼즐</summary>
 
+- **왜**: AI로 게임을 반복 제작하는 흐름 검증과 스토어·앱인토스 수익화
+- **역할**: 기획·요구사항·검수는 본인, 코드는 주로 AI
 - 기술: TypeScript
 - 웹: https://water-rescue.mycsbot.com/
 
@@ -296,6 +327,8 @@ AI와 함께 서비스와 게임을 기획·개발·배포·운영합니다. 대
 <details>
 <summary><b>Farm Rush</b> — 터치로 즐기는 오리지널 농장 경영 게임, 1,000 스테이지</summary>
 
+- **왜**: AI로 게임을 반복 제작하는 흐름 검증과 스토어·앱인토스 수익화
+- **역할**: 기획·요구사항·검수는 본인, 코드는 주로 AI
 - 기술: JavaScript
 - 웹: https://farm-rush.mycsbot.com/
 
@@ -306,6 +339,8 @@ AI와 함께 서비스와 게임을 기획·개발·배포·운영합니다. 대
 <details>
 <summary><b>Abyss Relay</b> — 전력을 배분하며 3분을 버티는 절차 생성 잠수함 생존 게임</summary>
 
+- **왜**: AI로 게임을 반복 제작하는 흐름 검증과 스토어·앱인토스 수익화
+- **역할**: 기획·요구사항·검수는 본인, 코드는 주로 AI
 - 기술: TypeScript
 
 
