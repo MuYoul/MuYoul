@@ -15,6 +15,7 @@ import yaml
 ROOT = Path(__file__).resolve().parent.parent
 OWNER = "MuYoul"
 START, END = "<!-- projects:start -->", "<!-- projects:end -->"
+SUM_START, SUM_END = "<!-- summary:start -->", "<!-- summary:end -->"
 STATUS = {"live": "🟢 운영 중", "dev": "🟡 개발 중", "ended": "⚪ 미운영"}
 
 
@@ -42,6 +43,10 @@ def stores(p):
 
 def render_details(p):
     out = ["<details>", f"<summary><b>{p['name']}</b> — {p['summary']}</summary>", ""]
+    if p.get("why"):
+        out.append(f"- **왜**: {p['why']}")
+    if p.get("role"):
+        out.append(f"- **역할**: {p['role']}")
     out += [f"- {f}" for f in p.get("features", [])]
     if p.get("stack"):
         out.append(f"- 기술: {' · '.join(p['stack'])}")
@@ -107,15 +112,35 @@ def render(data, token):
     return "\n".join(out)
 
 
+def render_summary(data):
+    """맨 위 요약표와 최근 작업. render() 뒤에 불러야 p["_date"]가 있다."""
+    ps = data["projects"]
+    nums = {
+        "total": len(ps),
+        "live": sum(p["status"] == "live" for p in ps),
+        "store_games": sum(p["category"] == "game" and bool(stores(p)) for p in ps),
+    }
+    out = ["| 내세우는 것 | 근거 | 바로 보기 |", "|---|---|---|"]
+    out += [f"| **{h['value']}** | {h['proof'].format(**nums)} | {h['see']} |" for h in data.get("highlights", [])]
+    recent = sorted((p for p in ps if p["status"] != "ended" and p["_date"][:1].isdigit()), key=lambda p: p["_date"], reverse=True)[:5]
+    out += ["", "**최근 작업**", ""]
+    out += [f"- {p['_date']} · {p['name']} — {p['summary']}" for p in recent]
+    return "\n".join(out)
+
+
+def replace_block(text, start, end, body):
+    if start not in text or end not in text:
+        sys.exit(f"README.md에 {start} / {end} 마커가 없습니다")
+    return re.sub(re.escape(start) + ".*?" + re.escape(end), lambda _: f"{start}\n{body}\n{end}", text, flags=re.S)
+
+
 def main():
     data = yaml.safe_load((ROOT / "projects.yml").read_text(encoding="utf-8"))
     readme = ROOT / "README.md"
     text = readme.read_text(encoding="utf-8")
-    if START not in text or END not in text:
-        sys.exit(f"README.md에 {START} / {END} 마커가 없습니다")
-    body = render(data, os.environ.get("GH_TOKEN"))
-    new = re.sub(re.escape(START) + ".*?" + re.escape(END), lambda _: f"{START}\n{body}\n{END}", text, flags=re.S)
-    readme.write_text(new, encoding="utf-8")
+    text = replace_block(text, START, END, render(data, os.environ.get("GH_TOKEN")))
+    text = replace_block(text, SUM_START, SUM_END, render_summary(data))
+    readme.write_text(text, encoding="utf-8")
 
 
 if __name__ == "__main__":

@@ -1,16 +1,40 @@
 # lemy0715
 
-> **AI를 대하는 방식**
->
+AI와 함께 서비스와 게임을 기획·개발·배포·운영합니다. 대부분 1인 작업이며, 한 일을 사실 위주로 적었습니다.
+
+- 포트폴리오: https://lemy0715.mycsbot.com/
+- 이메일: lemy0715@gmail.com
+
+<!-- summary:start -->
+| 내세우는 것 | 근거 | 바로 보기 |
+|---|---|---|
+| **끝까지 내놓고 운영한다** | 22개 중 운영 중 16 · 스토어 출시 게임 7 | [프로젝트](#프로젝트) |
+| **반복을 시스템으로 바꾼다** | 게임 공통 킷·검증 도구 · OpenAPI→MCP 도구 자동 생성 · 커밋 고정 배포·롤백 | [만드는 방식](#만드는-방식) |
+| **AI에게 맡기되 판단은 내가 한다** | 목표·요구사항·검증은 제가, 코드는 주로 AI가 · 품질이 안 나온 AiMER는 직접 종료 | [AI와 일하는 방식](#ai와-일하는-방식) |
+| **운영까지 책임진다** | 모든 서비스 지표를 중앙 Prometheus·Grafana로 수집 · 이전 직장에서 EKS 12개 관측성 전환 | [이전 경력](#이전-경력) |
+
+**최근 작업**
+
+- 2026-11-01 · 틀린그림찾기 — AI 이미지 생성 파이프라인으로 그림 100단계 제작
+- 2026-10-30 · 브릭 스톰 — 한 손가락 조준·발사 벽돌깨기, 스토어판 86개 언어
+- 2026-10-28 · UMMA 배달 주문 서비스 — 사용자 앱·배달기사 앱·관리자 웹·백엔드 외주 개발 (실서비스라 화면 비공개)
+- 2026-10-27 · 사천성 — 꺾인 선 3번 규칙 짝맞추기, 단계마다 판 확장·경로 시각화
+- 2026-10-27 · 보석 맞추기 — 1,200단계 매치3, 목표 7종을 단계 생성기로 생성
+<!-- summary:end -->
+
+## AI와 일하는 방식
+
 > AI는 유능한 동료이자 비서입니다. 하지만 만능은 아닙니다.
 > 결과의 쓸모와 효율은 무엇을 원하는지, 즉 목적과 요구사항을 얼마나 분명히 전하느냐에 달려 있습니다.
 > 그래서 AI의 강점과 한계, 일을 맡기고 피드백하는 방식을 익혀 한 명의 코워커처럼 함께 일하려 합니다.
 > 목표를 정하고 결과를 판단하는 것은 제 몫이고, 그렇게 아낀 시간으로 더 많은 것을 만듭니다.
 
-한 일을 사실 위주로 정리한 기록입니다. 대부분 1인으로 기획·개발·배포·운영했습니다.
+## 만드는 방식
 
-- 포트폴리오: https://lemy0715.mycsbot.com/
-- 이메일: lemy0715@gmail.com
+- **반복되는 일은 도구로 만듭니다.** 게임은 공통 킷·플랫폼 어댑터 위에서 만들고, 게임 검증 도구·이미지 제작 흐름·빌드·업로드 자동화를 함께 씁니다.
+- **API는 처음부터 AI가 쓰게 만듭니다.** API 전체를 MCP 도구로 제공해 대화형 AI에서 바로 씁니다(Simsim은 OpenAPI에서 도구를 자동 생성).
+- **배포는 되돌릴 수 있게 합니다.** 커밋(SHA) 고정 릴리스·롤백, 서비스 지표는 중앙 Prometheus·Grafana로 모읍니다.
+- **멈출 때는 이유를 남깁니다.** 종료한 프로젝트도 지우지 않고 사유와 함께 둡니다.
 
 ## 프로젝트
 
@@ -33,6 +57,8 @@
 <details>
 <summary><b>Simsim AI 비서</b> — 영수증 추출·기관 양식 문서 작성을 돕는 AI 비서와 원격 MCP 서버</summary>
 
+- **왜**: 정부 지원사업 신청에 필요한 영수증·서류 정리를 손으로 반복하지 않으려고
+- **역할**: 기능·처리 순서 결정과 실사용 검증은 본인, 데이터 구조·MCP 연결은 AI와 설계, 코드는 주로 AI
 - Google 로그인 + OAuth 원격 MCP 서버
 - OpenAPI에서 MCP 도구를 자동 생성해 API 전체를 AI에 제공
 - 메모·이미지·Drive·RAG API, Slack 등 대화 환경에서 사용
@@ -49,6 +75,8 @@
 <details>
 <summary><b>Gridmint Bots</b> — 그리드봇·시그널봇·스캘퍼를 한 콘솔에서 생성·정지·관리</summary>
 
+- **왜**: 거래소마다 흩어진 포지션을 한곳에서 보고, 최종 판단은 사람이 하는 보조 도구가 필요해서
+- **역할**: 설계·화면·요구사항·테스트 관리는 본인, 코드는 AI, 실사용 중 문제는 AI와 함께 수정
 - 거래소 잔고를 포지션 단위로 나눠 담당 봇을 추적
 - 커밋(SHA) 고정 릴리스·롤백, Prometheus/Grafana 관측
 - 연동 거래소 Upbit · Coinone · Bitget · OKX
@@ -66,6 +94,8 @@
 <details>
 <summary><b>Gridmint Ledger</b> — 여러 거래소의 자산·수익·거래 내역을 모아 KRW·USDT 구분 표시</summary>
 
+- **왜**: 거래소마다 따로 접속하지 않고 전체 자산과 손익을 한 번에 보려고
+- **역할**: 설계·화면·요구사항·테스트 관리는 본인, 코드는 AI
 - 거래소 통합 자산·손익 조회
 - 백엔드 API를 MCP로 제공해 AI로 필요한 뷰를 만들도록 설계
 - 기술: Next.js · React · Python · FastAPI · MCP
@@ -123,6 +153,8 @@
 <details>
 <summary><b>AiMER</b> — 샘플 데이터로 병명 후보를 추천해 병리 보고서를 만드는 실험</summary>
 
+- **왜**: 병리의사가 채팅으로 데이터를 넣으면 보고서 초안이 나오게 하려고
+- **역할**: 전체 로직·설계 방향은 본인(판단 기준은 의사와 상의), 코드는 주로 AI, 결과 검토 후 종료 결정
 - 샘플 입력·보고서 생성 API를 MCP로 제공
 - 협업 의사의 채팅에 연결해 사이트 없이 보고서 생성
 - 테스트 검토 후 품질·비용 문제로 종료 (실제 의료 업무 미사용)
@@ -153,10 +185,10 @@
 
 | 프로젝트 | 한 줄 소개 | 상태 | 스토어 | 최근 갱신 |
 |---|---|---|---|---|
-| **[틀린그림찾기](https://spot-diff.mycsbot.com/)** | AI 이미지 생성 파이프라인으로 그림 100단계 제작 | 🟢 운영 중 | [Google Play](https://play.google.com/store/apps/details?id=com.mycsbot.spotdiff) | 2026-10-28 |
+| **[틀린그림찾기](https://spot-diff.mycsbot.com/)** | AI 이미지 생성 파이프라인으로 그림 100단계 제작 | 🟢 운영 중 | [Google Play](https://play.google.com/store/apps/details?id=com.mycsbot.spotdiff) | 2026-11-01 |
+| **[브릭 스톰](https://brick-storm.mycsbot.com/)** | 한 손가락 조준·발사 벽돌깨기, 스토어판 86개 언어 | 🟢 운영 중 | [Google Play](https://play.google.com/store/apps/details?id=com.mycsbot.brickstorm) | 2026-10-30 |
 | **[사천성](https://sacheonseong.mycsbot.com/)** | 꺾인 선 3번 규칙 짝맞추기, 단계마다 판 확장·경로 시각화 | 🟢 운영 중 | [Google Play](https://play.google.com/store/apps/details?id=com.mycsbot.sacheonseong) · [App Store](https://apps.apple.com/kr/app/id6821350907) | 2026-10-27 |
 | **[보석 맞추기](https://jewel-match.mycsbot.com/)** | 1,200단계 매치3, 목표 7종을 단계 생성기로 생성 | 🟢 운영 중 | [Google Play](https://play.google.com/store/apps/details?id=com.mycsbot.jewelmatch) | 2026-10-27 |
-| **[브릭 스톰](https://brick-storm.mycsbot.com/)** | 한 손가락 조준·발사 벽돌깨기, 스토어판 86개 언어 | 🟢 운영 중 | [Google Play](https://play.google.com/store/apps/details?id=com.mycsbot.brickstorm) | 2026-10-27 |
 | **[폴짝 러너](https://hop-run.mycsbot.com/)** | 원터치 러너 | 🟢 운영 중 | [Google Play](https://play.google.com/store/apps/details?id=com.mycsbot.hoprun) | 2026-10-27 |
 | **[왼쪽 오른쪽](https://left-right.mycsbot.com/)** | 봄나물은 밥상, 봄꽃은 꽃병으로 나누는 1분 좌우 나누기 | 🟢 운영 중 | [Google Play](https://play.google.com/store/apps/details?id=com.mycsbot.leftright) | 2026-10-06 |
 | **[두더지 잡기](https://mole-catch.mycsbot.com/)** | 60초 아케이드 | 🟢 운영 중 | [Google Play](https://play.google.com/store/apps/details?id=com.mycsbot.molecatch) | 2026-10-06 |
@@ -174,6 +206,17 @@
 
 <img src="assets/screens/spot-diff-1.jpg" alt="틀린그림찾기 화면" width="240">
 <img src="assets/screens/spot-diff-2.jpg" alt="틀린그림찾기 화면" width="240">
+
+</details>
+<details>
+<summary><b>브릭 스톰</b> — 한 손가락 조준·발사 벽돌깨기, 스토어판 86개 언어</summary>
+
+- 기술: TypeScript · Capacitor
+- 웹: https://brick-storm.mycsbot.com/
+- 스토어: [Google Play](https://play.google.com/store/apps/details?id=com.mycsbot.brickstorm)
+
+<img src="assets/screens/brick-storm-1.jpg" alt="브릭 스톰 화면" width="240">
+<img src="assets/screens/brick-storm-2.jpg" alt="브릭 스톰 화면" width="240">
 
 </details>
 <details>
@@ -196,17 +239,6 @@
 
 <img src="assets/screens/jewel-match-1.jpg" alt="보석 맞추기 화면" width="240">
 <img src="assets/screens/jewel-match-2.jpg" alt="보석 맞추기 화면" width="240">
-
-</details>
-<details>
-<summary><b>브릭 스톰</b> — 한 손가락 조준·발사 벽돌깨기, 스토어판 86개 언어</summary>
-
-- 기술: TypeScript · Capacitor
-- 웹: https://brick-storm.mycsbot.com/
-- 스토어: [Google Play](https://play.google.com/store/apps/details?id=com.mycsbot.brickstorm)
-
-<img src="assets/screens/brick-storm-1.jpg" alt="브릭 스톰 화면" width="240">
-<img src="assets/screens/brick-storm-2.jpg" alt="브릭 스톰 화면" width="240">
 
 </details>
 <details>
@@ -279,6 +311,14 @@
 
 </details>
 <!-- projects:end -->
+
+## 이전 경력
+
+2001년 마이컴·모바일 게임 개발로 시작해 클라우드 모니터링·SDN 개발을 거쳐 Kubernetes 플랫폼 운영을 했습니다.
+
+- **11번가** (2020.12~2025.07): Terraform 기반 EKS 구축·운영, Datadog → Prometheus·Grafana 전환을 EKS 12개에 적용, 대형 행사 전 용량 사전 확보
+- **베스핀글로벌** (2019.11~2020.12): opsnow.com Kubernetes·EKS 운영, 신규 서비스 CI/CD
+- **에스코어** (2012.04~2019.10): 클라우드 모니터링 에이전트, OpenStack Neutron·SDN, 관리 콘솔
 
 ## 기술 스택
 

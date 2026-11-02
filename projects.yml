@@ -3,6 +3,25 @@
 #
 # status: live(운영 중) | dev(개발 중) | ended(종료)
 # repos:  최근 갱신일을 읽어 올 저장소(여러 개면 가장 최근 값). 없으면 updated 값을 쓴다.
+# why:    해결하려던 문제 한 줄 / role: 내가 한 일과 AI가 한 일 (상세 맨 위에 표시, 없으면 생략)
+#
+# 공개 완료 기준: link(웹·스토어) + 화면 1~2장 + summary + why + role 이 모두 있으면 live 로 올린다.
+# 갱신: GH_TOKEN=$(gh auth token) python3 scripts/build_readme.py
+
+# README 맨 위 요약표. proof 의 {total} {live} {store_games} 는 아래 projects 에서 자동 계산.
+highlights:
+  - value: 끝까지 내놓고 운영한다
+    proof: "{total}개 중 운영 중 {live} · 스토어 출시 게임 {store_games}"
+    see: "[프로젝트](#프로젝트)"
+  - value: 반복을 시스템으로 바꾼다
+    proof: 게임 공통 킷·검증 도구 · OpenAPI→MCP 도구 자동 생성 · 커밋 고정 배포·롤백
+    see: "[만드는 방식](#만드는-방식)"
+  - value: AI에게 맡기되 판단은 내가 한다
+    proof: 목표·요구사항·검증은 제가, 코드는 주로 AI가 · 품질이 안 나온 AiMER는 직접 종료
+    see: "[AI와 일하는 방식](#ai와-일하는-방식)"
+  - value: 운영까지 책임진다
+    proof: 모든 서비스 지표를 중앙 Prometheus·Grafana로 수집 · 이전 직장에서 EKS 12개 관측성 전환
+    see: "[이전 경력](#이전-경력)"
 
 categories:
   ai: AI · MCP
@@ -16,6 +35,8 @@ projects:
     category: ai
     status: live
     summary: 영수증 추출·기관 양식 문서 작성을 돕는 AI 비서와 원격 MCP 서버
+    why: 정부 지원사업 신청에 필요한 영수증·서류 정리를 손으로 반복하지 않으려고
+    role: 기능·처리 순서 결정과 실사용 검증은 본인, 데이터 구조·MCP 연결은 AI와 설계, 코드는 주로 AI
     features:
       - Google 로그인 + OAuth 원격 MCP 서버
       - OpenAPI에서 MCP 도구를 자동 생성해 API 전체를 AI에 제공
@@ -32,6 +53,8 @@ projects:
     category: ai
     status: ended
     summary: 샘플 데이터로 병명 후보를 추천해 병리 보고서를 만드는 실험
+    why: 병리의사가 채팅으로 데이터를 넣으면 보고서 초안이 나오게 하려고
+    role: 전체 로직·설계 방향은 본인(판단 기준은 의사와 상의), 코드는 주로 AI, 결과 검토 후 종료 결정
     features:
       - 샘플 입력·보고서 생성 API를 MCP로 제공
       - 협업 의사의 채팅에 연결해 사이트 없이 보고서 생성
@@ -43,6 +66,8 @@ projects:
     category: trading
     status: live
     summary: 그리드봇·시그널봇·스캘퍼를 한 콘솔에서 생성·정지·관리
+    why: 거래소마다 흩어진 포지션을 한곳에서 보고, 최종 판단은 사람이 하는 보조 도구가 필요해서
+    role: 설계·화면·요구사항·테스트 관리는 본인, 코드는 AI, 실사용 중 문제는 AI와 함께 수정
     features:
       - 거래소 잔고를 포지션 단위로 나눠 담당 봇을 추적
       - 커밋(SHA) 고정 릴리스·롤백, Prometheus/Grafana 관측
@@ -63,6 +88,8 @@ projects:
     category: trading
     status: live
     summary: 여러 거래소의 자산·수익·거래 내역을 모아 KRW·USDT 구분 표시
+    why: 거래소마다 따로 접속하지 않고 전체 자산과 손익을 한 번에 보려고
+    role: 설계·화면·요구사항·테스트 관리는 본인, 코드는 AI
     features:
       - 거래소 통합 자산·손익 조회
       - 백엔드 API를 MCP로 제공해 AI로 필요한 뷰를 만들도록 설계
